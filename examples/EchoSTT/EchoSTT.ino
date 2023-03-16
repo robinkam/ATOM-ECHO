@@ -80,7 +80,7 @@ bool InitI2SSpeakOrMic(int mode) {
 }
 
 BaiduRest rest;
-uint8_t microphonedata0[1024 * 80];
+uint8_t microphonedata0[1024 * 70]; // if RAM is insufficient, reduce the array size.
 size_t byte_read = 0;
 int16_t *buffptr;
 uint32_t data_offset = 0;
