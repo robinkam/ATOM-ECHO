@@ -46,6 +46,7 @@ void InitI2SSpeakerOrMic(int mode)
     err += i2s_driver_install(SPEAKER_I2S_NUMBER, &i2s_config, 0, NULL);
     i2s_pin_config_t tx_pin_config;
 
+    tx_pin_config.mck_io_num = -1;  // avoid runtime i2s_check_set_mclk() failure
     tx_pin_config.bck_io_num = CONFIG_I2S_BCK_PIN;
     tx_pin_config.ws_io_num = CONFIG_I2S_LRCK_PIN;
     tx_pin_config.data_out_num = CONFIG_I2S_DATA_PIN;
